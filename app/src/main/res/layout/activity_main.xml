@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/labelHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:text="Македонско - Англиски Речник"
+        android:textSize="23sp"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/inputPrebaruvaj"
+        android:layout_below="@+id/labelHead"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/input_background"
+        android:hint="Пребарувај"
+        android:paddingLeft="10dp" />
+
+    <LinearLayout
+        android:id="@+id/linearPrebaruvaj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputPrebaruvaj"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/inputMakedonski"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/input_background"
+            android:hint="Збор на Македонски"
+            android:paddingLeft="10dp" />
+        
+        <EditText
+            android:id="@+id/inputAngliski"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/input_background"
+            android:hint="Англиски превод"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btnDodajZbor"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/linearPrebaruvaj"
+        android:background="@drawable/btn_background"
+        android:text="Додај нов збор"
+        android:textSize="17sp" />
+
+    <LinearLayout
+        android:id="@+id/linearResults"
+        android:layout_below="@id/btnDodajZbor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/labelResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Резултати"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/linearFilters"
+        android:layout_below="@id/linearResults"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerRecnik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="100"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp">
+
+        <Button
+            android:id="@+id/btnIzbrisiFiltri"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/btn_background"
+            android:text="Избрши филтри"
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
